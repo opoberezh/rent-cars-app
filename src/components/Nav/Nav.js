@@ -18,6 +18,7 @@ import RentLogo from "../../Img/RentLogo.jpg"
         <NavMenu to="/favorites" activeClassName="active"className="animated">Favorites</NavMenu>
       </Container>
     </HeaderWrapper>
+    
   );
 }
 

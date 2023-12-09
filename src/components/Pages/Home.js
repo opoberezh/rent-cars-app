@@ -1,5 +1,6 @@
 
 
+
 const Home = () => {
     return (
         <main>
@@ -14,6 +15,7 @@ const Home = () => {
             <img src='https://i.pinimg.com/originals/4a/43/ed/4a43ed5055ed198d326ddfe32fa774cc.jpg' alt="blue car"  style={{ width: '70%', height: 'auto', borderRadius: "40%"}}/>
             </div>
         </main>
+        
     )
 }
 export default Home;
