@@ -36,6 +36,7 @@ export const NavMenu = styled(NavLink)`
   text-decoration: none;
   color: #FFFFFF;
   font-weight: 500;
+  font-size: 24px;
   cursor: pointer;
   text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
 

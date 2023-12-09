@@ -12,7 +12,8 @@ body {
 span.custom-font {
   font-family: 'Permanent Marker';
   font-style: italic;
-  font-size: 48px;
+  font-weight: 800;
+  font-size: 52px;
   color: #3470ff;
  
 }
