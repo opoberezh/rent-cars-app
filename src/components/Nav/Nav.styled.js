@@ -24,8 +24,9 @@ export const Container = styled.div`
 
 export const Logo = styled.img`
 height:80px;
-margin-right: 20px;
+border-radius: 70%;
 `;
+
 
 export const NavMenu = styled(NavLink)`
   display: flex;
@@ -43,9 +44,10 @@ export const NavMenu = styled(NavLink)`
   }
 
   &.active {
-    color:#00008B;
+    color:#66CDAA;
    
-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    text-shadow: 0 1px 2px rgba(0, 0, 70, 0.4);
+
     position: relative;
 
     &:after {
@@ -81,8 +83,3 @@ text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
 `;
 
 
-export const Span = styled.span`
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-`;
