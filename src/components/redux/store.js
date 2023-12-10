@@ -26,6 +26,7 @@ export const store = configureStore({
   reducer: {
     favorites: favoritesReducer(favoritesPersistConfig, favoritesReducer),
     adverts: advertsReducer,
+    catalog: catalogReducer,
     filter: filterReducer,
   },
 
