@@ -40,7 +40,7 @@ export const WrapInfor = styled.div`
   margin-bottom: 24px;
 `;
 
-export const TitleAdvert = styled.div`
+export const TitleCard = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

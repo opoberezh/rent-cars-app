@@ -13,3 +13,5 @@ export const selectDisplayedItems = state => state.catalog.displayedItems;
 export const selectIsModalOpen = state => state.catalog.isModalOpen;
 
 export const selectSelectedAdvert = state => state.catalog.selectedAdvert;
+
+export const selectCurrentPage = state => state.catalog.currentPage;

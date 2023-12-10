@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectDisplayedItems, selectIsModalOpen, selectSelectedAdvert, setDisplayedItems, setIsModalOpen, setSelectedAdvert } from 'ваш-шлях-до-редуктора';
+import {
+  setDisplayedItems,
+  setIsModalOpen,
+  setSelectedAdvert,
+} from '../redux/catalogSlice';
 import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import Favorite from 'components/pages/Favorit';
-import { Price, Wrapper, WrapperTitle } from './AdvertsList.styled';
+import { Description, Image, Price, Title, Wrapper, WrapperImage, WrapperTitle } from './AdvertsList.styled';
 
 const AdvertList = ({ data }) => {
   const dispatch = useDispatch();
-  const displayedItems = useSelector(selectDisplayedItems);
-  const isModalOpen = useSelector(selectIsModalOpen);
-  const selectedAdvert = useSelector(selectSelectedAdvert);
+  const displayedItems = useSelector( setDisplayedItems,);
+  const isModalOpen = useSelector(setIsModalOpen);
+  const selectedAdvert = useSelector( setSelectedAdvert);
 
   const handleOpen = () => {
     dispatch(setIsModalOpen(true));
-    dispatch(setSelectedAdvert(data[0])); 
+    dispatch(setSelectedAdvert(data[0]));
   };
 
   const handleClose = () => {
@@ -25,7 +29,7 @@ const AdvertList = ({ data }) => {
   return (
     <>
       <ul>
-        {data.slice(0, displayedItems).map((advert) => (
+        {data.slice(0, displayedItems).map(advert => (
           <li key={advert.id}>
             <Wrapper>
               <WrapperImage>
@@ -34,12 +38,13 @@ const AdvertList = ({ data }) => {
               </WrapperImage>
               <WrapperTitle>
                 <Title>
-                  {advert.make} <span style={{ color: '#3470FF' }}>{advert.model}</span>,{' '}
+                  {advert.make}{' '}
+                  <span style={{ color: '#3470FF' }}>{advert.model}</span>,{' '}
                   {advert.year}
                 </Title>
                 <Price>{advert.rentalPrice}</Price>
               </WrapperTitle>
-              <Discription>
+              <Description>
                 <li>{advert.address.split(',')[1]}</li>
                 <li>{advert.address.split(',')[2]}</li>
                 <li>{advert.rentalCompany}</li>
@@ -47,10 +52,14 @@ const AdvertList = ({ data }) => {
                 <li>{advert.model}</li>
                 <li>{advert.mileage}</li>
                 <li>{advert.accessories[0]}</li>
-              </Discription>
+              </Description>
               <Button text="Learn more" onClick={handleOpen} width="274px" />
               {isModalOpen && selectedAdvert && (
-                <Modal open={isModalOpen} onClose={handleClose} data={selectedAdvert} />
+                <Modal
+                  open={isModalOpen}
+                  onClose={handleClose}
+                  data={selectedAdvert}
+                />
               )}
             </Wrapper>
           </li>

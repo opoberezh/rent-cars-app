@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Button from 'components/Button/Button';
+import CustomButton from 'components/Button/Button';
 import { FiX } from 'react-icons/fi';
-import { Wrapper, CloseButton, CarImg, WrapInfor, TitleAdvert, Description, Title,  List, Item, Description,  OptionsTitel, ConditionItem, ConditionList, ConditionSpan, } from './Modal.styled';
+import { CarImage, CloseButton, ConditionItem, ConditionList, ConditionSpan, Description, Item, List, OptionsTitel, Span, Title, TitleCard, WrapInfor, Wrapper } from './Mdal.styled';
+
 
 const style = {
   position: 'absolute',
@@ -17,16 +18,13 @@ const style = {
   p: 4,
 };
 
-const Modal = ({ data }) => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+export default function CustomModal ({ open, onClose, data }) {
 
   return (
     <>
       <Modal
-        open={handleOpen}
-        onClose={handleClose}
+        open={open}
+        onClose={onClose}
         aria-labelledby="keep-mounted-modal-title"
         aria-describedby="keep-mounted-modal-description"
       >
@@ -41,17 +39,17 @@ const Modal = ({ data }) => {
             },
           }}>
           <Wrapper>
-            <CloseButton onClick={handleClose}>
+            <CloseButton onClick={onClose}>
               <FiX style={{ width: '12px', height: '12px' }} />
             </CloseButton>
-            <CarImg data={data}/>
+            <CarImage data={data}/>
             <WrapInfor>
-              <TitleAdvert>
+              <TitleCard>
                 <Title>
                     {data.make} <Span>{data.model}, </Span>
                   {data.year} 
                 </Title>
-              </TitleAdvert>
+              </TitleCard>
               <List>
                 <Item>{data.address.split(',')[1]}</Item>
                 <Item>{data.address.split(',')[2]}</Item>
@@ -100,11 +98,11 @@ const Modal = ({ data }) => {
                 </ConditionItem>
               </ConditionList>
             </WrapInfor>
-            <Button   text="Rental car"
+            <CustomButton  text="Rental car"
               width="168px"
               onClick={() => {
                 window.location.href = 'tel:+380730000000';
-              }}></Button>
+              }}></CustomButton>
           </Wrapper>
         </Box>
       </Modal>
@@ -112,4 +110,3 @@ const Modal = ({ data }) => {
   );
 }
 
-export default Modal;
