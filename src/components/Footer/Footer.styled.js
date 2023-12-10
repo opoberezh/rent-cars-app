@@ -6,7 +6,7 @@ export const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   justify-content: space-evenly;
-  gap: 24px;
+  gap: 12px;
   background: #3470ff;
 
   @media screen and (max-width: 425px) {
@@ -17,7 +17,7 @@ export const FooterContainer = styled.div`
 export const FooterList = styled.ul`
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   margin: 0;
   padding: 0;
   list-style: none;

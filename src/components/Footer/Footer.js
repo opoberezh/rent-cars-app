@@ -39,7 +39,7 @@ const Footer = () => {
         <FooterList>
           <li>
             <SocialNet href="mailto:info@rent_car.com">
-              <MdEmail size={24} style={{ marginRight: '5px' }} /><Span>info@rent-car.com</Span>
+              <MdEmail size={24} style={{ marginRight: '10px' }} /><Span>info@rent-car.com</Span>
               
             </SocialNet>
           </li>
