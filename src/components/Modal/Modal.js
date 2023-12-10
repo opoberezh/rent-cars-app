@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import CustomButton from 'components/Button/Button';
 import { FiX } from 'react-icons/fi';
-import { CarImage, CloseButton, ConditionItem, ConditionList, ConditionSpan, Description, Item, List, OptionsTitel, Span, Title, TitleCard, WrapInfor, Wrapper } from './Mdal.styled';
+import { CarImage, CloseButton, ConditionItem, ConditionList, ConditionSpan, Description, Item, List, OptionsTitel, Span, Title, TitleCard, WrapInfor, Wrapper } from './Modal.styled';
 
 
 const style = {

@@ -1,29 +1,26 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  setDisplayedItems,
-  setIsModalOpen,
-  setSelectedAdvert,
-} from '../redux/catalogSlice';
+
 import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import Favorite from 'components/pages/Favorit';
 import { Description, Image, Price, Title, Wrapper, WrapperImage, WrapperTitle } from './AdvertsList.styled';
+import { selectDisplayedItems, selectIsModalOpen, selectSelectedAdvert } from 'components/redux/selectors';
 
 const AdvertList = ({ data }) => {
   const dispatch = useDispatch();
-  const displayedItems = useSelector( setDisplayedItems,);
-  const isModalOpen = useSelector(setIsModalOpen);
-  const selectedAdvert = useSelector( setSelectedAdvert);
+  const displayedItems = useSelector( selectDisplayedItems,);
+  const isModalOpen = useSelector(selectIsModalOpen);
+  const selectedAdvert = useSelector(selectSelectedAdvert);
 
   const handleOpen = () => {
-    dispatch(setIsModalOpen(true));
-    dispatch(setSelectedAdvert(data[0]));
+    dispatch(selectIsModalOpen(true));
+    dispatch(selectSelectedAdvert(data[0]));
   };
 
   const handleClose = () => {
-    dispatch(setIsModalOpen(false));
-    dispatch(setSelectedAdvert(null));
+    dispatch(selectIsModalOpen(false));
+    dispatch(selectSelectedAdvert(null));
   };
 
   return (

@@ -2,7 +2,6 @@ import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
- 
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -14,6 +13,7 @@ import {
 import { favoritesReducer } from './favoritesSlice';
 import { advertsReducer } from './advertsSlice';
 import { filterReducer } from './filterSlice';
+import { catalogReducer } from './catalogSlice';
 
 const favoritesPersistConfig = {
   key: 'favorites',

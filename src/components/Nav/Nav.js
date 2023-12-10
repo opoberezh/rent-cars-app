@@ -8,7 +8,6 @@ import {
 } from './Nav.styled.js';
 import RentLogo from "../../Img/RentLogo.jpg"
  const Nav = () => {
-  console.log("Image path:", "/src/Img/RentLogo.jpg");
   return (
     <HeaderWrapper>
       <Container>

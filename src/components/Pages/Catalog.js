@@ -1,8 +1,8 @@
 import AdvertList from 'components/AdvertsList/AdvertsList';
-import Button from 'components/Button/Button';
-import { setCurrentPage } from 'components/redux/catalogSlice';
+import { setCurrentPage } from '../redux/catalogSlice';
 import { selectCurrentPage } from 'components/redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
+import CustomButton from 'components/Button/Button';
 
 const Catalog = ({ data }) => {
   const dispatch = useDispatch();
@@ -15,8 +15,8 @@ const Catalog = ({ data }) => {
 
   const totalPage = Math.ceil(data.length / itemsPerPage);
 
-  const handlePageChange = newPage => {
-    dispatch(setCurrentPage(newPage));
+  const handlePageChange = (page) => {
+    dispatch(setCurrentPage(page));
   };
 
   return (
@@ -26,7 +26,7 @@ const Catalog = ({ data }) => {
         {Array.from({ length: totalPage }, (_, index) => index + 1).map(
           page => (
             <li key={page}>
-              <Button onClick={() => handlePageChange}>{page}</Button>
+              <CustomButton onClick={() => handlePageChange(page)}>{page}</CustomButton>
             </li>
           )
         )}

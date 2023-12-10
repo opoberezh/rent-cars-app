@@ -2,6 +2,7 @@ import { fetchAdverts, useSelector } from 'components/redux/operations';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
+
 const selectIsLoading = (state) => state.adverts.isLoading;  
 const selectError = (state) => state.adverts.error;  
 
