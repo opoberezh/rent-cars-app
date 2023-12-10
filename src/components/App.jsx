@@ -1,9 +1,9 @@
 import { Route,  Routes } from "react-router-dom";
-import { AppLayout } from "./AppLayout";
+import  AppLayout  from "./AppLayout";
 import Home from "./pages/Home";
 import Catalog from "./pages/Catalog";
 import Favorites from "./pages/Favorit";
-import Nav  from "./Nav/Nav";
+import Nav  from "../components/Nav/Nav";
 
 
 

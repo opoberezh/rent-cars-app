@@ -6,12 +6,6 @@ export const selectIsLoading = state => state.adverts.isLoading;
 
 export const selectError = state => state.adverts.error;
 
-export const selectFavoriteCards = state => state.favorites.favorites;
+export const selectFilter = state => state.filter;
 
-export const selectDisplayedItems = state => state.catalog.displayedItems;
-
-export const selectIsModalOpen = state => state.catalog.isModalOpen;
-
-export const selectSelectedAdvert = state => state.catalog.selectedAdvert;
-
-export const selectCurrentPage = state => state.catalog.currentPage;
+export const selectFavorites = state => state.favorites.favorites;

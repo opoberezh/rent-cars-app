@@ -1,34 +1,39 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState= {
-    displayedItems: 12,
-    isModalOpen: false,
-    selectedAdvert: null,
-    currentPage: 1,
+const initialState = {
+  displayedItems: 12,
+  isModalOpen: false,
+  selectedAdvert: null,
+  currentPage: 1,
 };
 
 export const catalogSlice = createSlice({
-    name: 'catalog',
-    initialState,
-    reducers: {
-        setDisplayedItems: (state, action) => {
-            state.displayedItems = action.payload;
-        },
+  name: 'catalog',
+  initialState,
+  reducers: {
+    setDisplayedItems: (state, action) => {
+      state.displayedItems = action.payload;
+    },
 
-        setIsModalOpen: (state, action) => {
-            state.isModalOpen = action.payload;
-        },
+    setIsModalOpen: (state, action) => {
+      state.isModalOpen = action.payload;
+    },
 
-        setSelectedAdvert: (state, action) => {
-            state.selectedAdvert = action.payload;
-          },
-          
-          setCurrentPage: (state, action) => {
-            state.currentPage = action.payload;
-        },
-    }
-})
+    setSelectedAdvert: (state, action) => {
+      state.selectedAdvert = action.payload;
+    },
 
-export const { setDisplayedItems, setIsModalOpen, setSelectedAdvert,  setCurrentPage } = catalogSlice.actions;
+    setCurrentPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
+  },
+});
 
-export default catalogSlice.reducer;
+export const {
+  setDisplayedItems,
+  setIsModalOpen,
+  setSelectedAdvert,
+  setCurrentPage,
+} = catalogSlice.actions;
+
+export const catalogReducer = catalogSlice.reducer;

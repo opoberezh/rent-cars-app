@@ -12,8 +12,10 @@ import {
 
 import { favoritesReducer } from './favoritesSlice';
 import { advertsReducer } from './advertsSlice';
+import {catalogReducer} from './catalogSlice';
 import { filterReducer } from './filterSlice';
-import { catalogReducer } from './catalogSlice';
+
+
 
 const favoritesPersistConfig = {
   key: 'favorites',
@@ -25,9 +27,9 @@ const favoritesPersistConfig = {
 export const store = configureStore({
   reducer: {
     favorites: favoritesReducer(favoritesPersistConfig, favoritesReducer),
-    adverts: advertsReducer,
-    catalog: catalogReducer,
-    filter: filterReducer,
+   adverts: advertsReducer,
+  catalog: catalogReducer,
+  filter: filterReducer,
   },
 
   middleware: getDefaultMiddleware =>
