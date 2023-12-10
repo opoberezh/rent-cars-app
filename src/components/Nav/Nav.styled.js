@@ -24,6 +24,7 @@ export const Container = styled.div`
 
 export const Logo = styled.img`
 height:80px;
+display: block;
 border-radius: 70%;
 `;
 
