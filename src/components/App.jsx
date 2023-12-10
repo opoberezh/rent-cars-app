@@ -1,8 +1,8 @@
 import { Route,  Routes } from "react-router-dom";
 import { AppLayout } from "./AppLayout";
-import Home from "./Pages/Home";
-import Catalog from "./Pages/Catalog";
-import Favorites from "./Pages/Favorit";
+import Home from "./pages/Home";
+import Catalog from "./pages/Catalog";
+import Favorites from "./pages/Favorit";
 import Nav  from "./Nav/Nav";
 
 
