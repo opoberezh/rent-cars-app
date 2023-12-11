@@ -16,7 +16,7 @@ const Favorites = lazy(() => import('./pages/Favorites'));
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="favorites" element={<Favorites />} />
-          <Route path="*" element={<Navigate raplace to="/" />} />
+          <Route path="*" element={<Navigate replace to="/" />} />
         </Route>
       </Routes>
       <ToastContainer />
