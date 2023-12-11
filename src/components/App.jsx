@@ -8,7 +8,7 @@ const Home = lazy(() => import('./pages/Home'));
 const Catalog = lazy(() => import('./pages/Catalog'));
 const Favorites = lazy(() => import('./pages/Favorites'));
 
-export const App =() => {
+ const App =() => {
   return (
     <>
       <Routes>
@@ -16,7 +16,7 @@ export const App =() => {
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="favorites" element={<Favorites />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate raplace to="/" />} />
         </Route>
       </Routes>
       <ToastContainer />
@@ -24,3 +24,4 @@ export const App =() => {
   );
 }
 
+export default App;

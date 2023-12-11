@@ -1,5 +1,6 @@
 import { selectFilter } from '../redux/selectors';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -23,12 +24,20 @@ import {
     setFromMileage,
     setToMileage,
   } from '../redux/filterSlice';
+import { fetchFilteredAdverts } from 'components/redux/operations';
   
   
   
   export const Filter = ({ makes, prices, onFilterChange }) => {
-    const dispatch = useDispatch();
     const filter = useSelector(selectFilter);
+
+    const dispatch = useDispatch();
+  
+    const applyFilter = (e) => {
+      e.preventDefault();
+  
+      dispatch(fetchFilteredAdverts(filter));
+    };
   
     const { selectedMake, selectedPrice, minValue, maxValue } = filter;
   
@@ -194,7 +203,7 @@ import {
             />
           </SelectContainer>
   
-        <Form>
+        <Form    onSubmit={applyFilter}>
           <Label>Car mileage / km</Label>
           <InputContainer>
             <InputLeft

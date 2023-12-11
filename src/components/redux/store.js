@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -19,14 +20,13 @@ import { filterReducer } from './filterSlice';
 
 const favoritesPersistConfig = {
   key: 'favorites',
-  version: 1,
   storage,
   whitelist: ['favorites'],
 };
 
 export const store = configureStore({
   reducer: {
-    favorites: favoritesReducer(favoritesPersistConfig, favoritesReducer),
+    favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
    adverts: advertsReducer,
   catalog: catalogReducer,
   filter: filterReducer,

@@ -1,6 +1,6 @@
 import {
-  addFavorite,
-  removeFavorite,
+  addToFavorite,
+  removeFromFavorite,
 } from '../redux/favoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
@@ -16,9 +16,9 @@ export const FavoriteCards = ({ data }) => {
 
   const handleToggleFavorite = () => {
     if (isChecked) {
-      dispatch(removeFavorite(data));
+      dispatch(removeFromFavorite(data));
     } else {
-      dispatch(addFavorite(data));
+      dispatch(addToFavorite(data));
     }
   };
 

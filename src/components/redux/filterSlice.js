@@ -5,27 +5,34 @@ const filterSlice = createSlice({
   initialState: {
     selectedMake: null,
     selectedPrice: null,
-   minValue: '',
+    selectedPriceLabel: null,
+    minValue: '',
     maxValue: '',
   },
   reducers: {
-    setMake: (state, action) => {
-      state.selectedMake = action.payload;
+    advertsFilter(state, action) {
+      state.formData = { ...state.formData, ...action.payload };
     },
-    setPrice: (state, action) => {
-      state.selectedPrice = action.payload;
+    setMake(state, action) {
+      state.formData.selectedMake = action.payload;
     },
-    setFromMileage: (state, action) => {
-      state.minValue = action.payload;
+    setPrice(state, action) {
+      state.formData.selectedPrice = action.payload;
+      state.formData.selectedPriceLabel = action.payload
+        ? `${action.payload}`
+        : null;
     },
-    setToMileage: (state, action) => {
-      state.maxValue = action.payload;
+    setFromMileage(state, action) {
+      state.formData.minValue = action.payload;
     },
-   
+    setToMileage(state, action) {
+      state.formData.maxValue = action.payload;
+    },
   },
 });
 
 export const {
+  advertsFilter,
   setMake,
   setPrice,
   setFromMileage,

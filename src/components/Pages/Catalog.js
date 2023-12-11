@@ -17,16 +17,17 @@ const Catalog = () => {
   const error = useSelector(selectError);
   const adverts = useSelector(selectAdverts);
 
+  const totalItems = adverts.length;
   const itemsPerPage = 12;
-  const totalPage = Math.ceil(adverts.length / itemsPerPage);
-
-  const handlePageChange = page => {
-    dispatch(setCurrentPage(page));
-  };
+  const totalPage = Math.ceil(totalItems / itemsPerPage);
 
   useEffect(() => {
-    dispatch(fetchAdverts());
-  }, [dispatch]);
+    dispatch(fetchAdverts({ page: 1, pageSize: itemsPerPage }));
+  }, [dispatch, itemsPerPage]);
+
+  const handlePageChange = (page) => {
+    dispatch(setCurrentPage(page));
+  };
 
   return (
     <>
