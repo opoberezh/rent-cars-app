@@ -1,25 +1,26 @@
-import { Route,  Routes } from "react-router-dom";
-import  AppLayout  from "./AppLayout";
-import Home from "./pages/Home";
-import Catalog from "./pages/Catalog";
-import Favorites from "./pages/Favorit";
-import Nav  from "../components/Nav/Nav";
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { lazy } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AppLayout from './AppLayout';
 
+const Home = lazy(() => import('./pages/Home'));
+const Catalog = lazy(() => import('./pages/Catalog'));
+const Favorites = lazy(() => import('./pages/Favorites'));
 
-
- const App = () => {
+export const App =() => {
   return (
-
     <>
-         <Routes>
-        <Route path="/" element={<AppLayout/>}>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="favorites" element={<Favorites />} />
-          <Route path="*" element={<Nav to="/" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
+      <ToastContainer />
     </>
-     );
-};
-export default App;
+  );
+}
+

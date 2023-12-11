@@ -1,11 +1,11 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
   width: 274px;
   height: 426px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
 `;
 
@@ -17,8 +17,8 @@ export const WrapperImage = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 268px;
+  // width: 100%;
+  // height: 268px;
   object-fit: cover;
   border-radius: 14px;
 `;

@@ -1,9 +1,11 @@
 import {
-  addToFavorite,
-  removeFromFavorite,
-} from 'components/redux/favoritesSlice';
+  addFavorite,
+  removeFavorite,
+} from '../redux/favoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { IoHeartOutline, IoHeartSharp } from 'react-icons/io5';
+import { Checkbox } from '@mui/material';
+import { selectFavorites } from '../redux/selectors';
 
 export const FavoriteCards = ({ data }) => {
   const dispatch = useDispatch();
@@ -14,9 +16,9 @@ export const FavoriteCards = ({ data }) => {
 
   const handleToggleFavorite = () => {
     if (isChecked) {
-      dispatch(removeFromFavorite(data));
+      dispatch(removeFavorite(data));
     } else {
-      dispatch(addToFavorite(data));
+      dispatch(addFavorite(data));
     }
   };
 
